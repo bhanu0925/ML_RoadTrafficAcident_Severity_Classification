@@ -35,6 +35,11 @@ typeOfVeh = ['Automobile', 'Bajaj', 'Bicycle', 'Long lorry', 'Lorry (11?40Q)', '
 lanesOrMedians = ['Double carriageway (median)', 'One way', 'Two-way (divided with broken lines road marking)', 'Two-way (divided with solid lines road marking)', 'Undivided Two way', 'Unknown', 'other']
 typesofjunction = ['Crossing', 'No junction', 'O Shape', 'Other', 'T Shape', 'Unknown', 'X Shape', 'Y Shape']
 roadsurfacecondition = ['Dry', 'Flood over 3cm. deep', 'Snow', 'Wet or damp']
+areaaccidentoccured = ['Residential areas', 'Office areas', '  Recreational areas',
+       ' Industrial areas', 'Other', ' Church areas',
+       '  Market areas', 'Unknown', 'Rural village areas',
+       ' Outside rural areas', ' Hospital areas', 'School areas',
+       'Rural village areasOffice areas', 'Recreational areas'] 
 typeofcollision = ['Collision with animals', 'Collision with pedestrians', 'Collision with roadside objects', 'Collision with roadside-parked vehicles', 'Fall from vehicles', 'Other', 'Rollover', 'Unknown', 'Vehicle with vehicle collision', 'With Train']
 
 
@@ -58,7 +63,8 @@ with st.form("Prediction_form"):
     lanes = col2.selectbox("Lanes or Medians : ", options = lanesOrMedians)
     junctions = col1.selectbox("Types of Junctions : ", options = typesofjunction)
     roadsurface = col2.selectbox("Road Surface Conditions : ", options = roadsurfacecondition)
-    collision = col1.selectbox("Type of Collision : ", options = typeofcollision)
+    areaaccoccured = col1.selectbox("Area Accident Occured : ", options = areaaccidentoccured)
+    collision = col2.selectbox("Type of Collision : ", options = typeofcollision)
 
 
     if st.form_submit_button("Predict") :
@@ -72,15 +78,16 @@ with st.form("Prediction_form"):
         lanes = ordinal_encoder(lanes,lanesOrMedians)
         type_of_junction = ordinal_encoder(junctions,typesofjunction)
         road_surface = ordinal_encoder(roadsurface,roadsurfacecondition)
+        area_acc_Occured = ordinal_encoder(areaaccoccured,areaaccidentoccured)
         type_of_collision = ordinal_encoder(collision,typeofcollision)
         
         
         
         data = np.array([day_of_week,Cause_Of_Accident,num_of_casualities,vehicles_involved, 
                              light_conditions,age_of_driver,education_of_driver,experience_of_driver,
-                             type_of_vehicle,lanes,type_of_junction,road_surface,type_of_collision]).reshape(1,-1)
+                             type_of_vehicle,lanes,type_of_junction,road_surface,area_acc_Occured,type_of_collision]).reshape(1,-1)
 
-        model = joblib.load('model/XTree_model_2.pickle')
+        model = joblib.load('model/rt_reduced.pkl')
         pred = get_prediction(data=data, model=model)
         
         st.write(f"The predicted severity is : {pred}")
