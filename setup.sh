@@ -16,7 +16,3 @@ enableCORS=false\n\
 port = $PORT\n\
 " > ~/.streamlit/config.toml
 
-primaryColor="#2961a2"
-backgroundColor="#3b9cd0"
-secondaryBackgroundColor="#161414"
-textColor="#f3eeee"
