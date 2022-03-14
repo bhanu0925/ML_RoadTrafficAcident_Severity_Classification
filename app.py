@@ -87,7 +87,7 @@ with st.form("Prediction_form"):
                              light_conditions,age_of_driver,education_of_driver,experience_of_driver,
                              type_of_vehicle,lanes,type_of_junction,road_surface,area_acc_Occured,type_of_collision]).reshape(1,-1)
 
-        model = joblib.load('model/rt_reduced.joblib')
+        model = joblib.load(r'model/rt_reduced.joblib')
         pred = get_prediction(data=data, model=model)
         
         st.write(f"The predicted severity is : {pred}")
