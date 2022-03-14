@@ -5,6 +5,9 @@ from src.predict import get_prediction, ordinal_encoder
 import numpy as np
 import joblib
 from sklearn.ensemble import ExtraTreesClassifier
+import warnings
+from sklearn.exceptions import DataConversionWarning
+warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 
 st.set_page_config(page_title="Road Accident Severity Predictor",             
                 layout="wide")
