@@ -7,6 +7,7 @@ import joblib
 from sklearn.ensemble import ExtraTreesClassifier
 import warnings
 from sklearn.exceptions import DataConversionWarning
+from src.load_model import get_model
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 
 st.set_page_config(page_title="Road Accident Severity Predictor",             
@@ -94,8 +95,9 @@ with st.form("Prediction_form"):
        
         #joblib.dump(model, open(r'model/RT_rePickle.joblib', 'wb'),compress=3)
         
-        remodel = joblib.load(r'model/RT_rePickle.joblib')
-        pred = get_prediction(data=data, model=remodel)
+        ## remodel = joblib.load(r'model/RT_rePickle.joblib')
+        model = get_model(r'model/RT_rePickle.joblib')
+        pred = get_prediction(data=data, model=model)
         
         st.write(f"The predicted severity is : {pred}")
      
