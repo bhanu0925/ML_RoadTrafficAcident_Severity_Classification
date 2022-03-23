@@ -35,3 +35,7 @@ The target feature is Accident_severity which is a multi-class variable. The tas
 <div align="center">
   <a href="https://www.youtube.com/watch?v=Vbh0oNV2a7g"><img src="https://img.youtube.com/vi/Vbh0oNV2a7g/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
+
+<div align="center">
+  <iframe src="https://www.youtube.com/watch?Vbh0oNV2a7g?autoplay=1" allow='autoplay'><img src="https://img.youtube.com/vi/Vbh0oNV2a7g/0.jpg" alt="IMAGE ALT TEXT"></iframe>
+</div>
