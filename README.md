@@ -32,3 +32,4 @@ The target feature is Accident_severity which is a multi-class variable. The tas
 
 12- Build the app woth the help of Streamlit and deployed it as web app using Heroku
 
+![Watch the video](https://youtu.be/Vbh0oNV2a7g)
