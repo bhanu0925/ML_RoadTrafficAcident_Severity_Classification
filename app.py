@@ -96,7 +96,8 @@ with st.form("Prediction_form"):
         #joblib.dump(model, open(r'model/RT_rePickle.joblib', 'wb'),compress=3)
         
         ## remodel = joblib.load(r'model/RT_rePickle.joblib')
-        model = get_model(r'model/RT_rePickle.joblib')
+        ##model = get_model2()
+        model = get_model(r'model/rt_reduced.joblib')
         pred = get_prediction(data=data, model=model)
         
         st.write(f"The predicted severity is : {pred}")
