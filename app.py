@@ -97,11 +97,12 @@ with st.form("Prediction_form"):
         
         ## remodel = joblib.load(r'model/RT_rePickle.joblib')
         ##model = get_model2()
-        model = get_model(r'model/rt_reduced.joblib')
+        model = get_model(model_path =r'model/RT_rePickle.joblib' )
         pred = get_prediction(data=data, model=model)
         
         st.write(f"The predicted severity is : {pred}")
      
-        
+        ## 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
+        ## https://medium.com/analytics-vidhya/deploying-nlp-model-on-heroku-using-flask-nltk-and-git-lfs-eed7d1b22b11
         
         
