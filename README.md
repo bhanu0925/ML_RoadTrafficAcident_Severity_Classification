@@ -6,6 +6,11 @@ This data set is collected from Addis Ababa Sub-city police departments for mast
 ## **Problem Statement**
 The target feature is Accident_severity which is a multi-class variable. The task is to classify this variable based on the other 31 features step-by-step by going through each day's task.
 
+## **App Demo**
+<div align='center'>
+<img src="https://github.com/bhanu0925/ML_RoadTrafficAcident_Severity_Classification/blob/main/RTA.gif">
+</div>
+
 **Steps followed**
 
 1- Importing all the necessary libraries, dataset
@@ -32,8 +37,6 @@ The target feature is Accident_severity which is a multi-class variable. The tas
 
 12- Build the app woth the help of Streamlit and deployed it as web app using Heroku
 
-<div align="center">
-  <a href="https://www.youtube.com/watch?v=Vbh0oNV2a7g"><img src="https://img.youtube.com/vi/Vbh0oNV2a7g/0.jpg" alt="Road Traffic Assistance Severity Prediction"></a>
-</div>
+
 
 
